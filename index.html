@@ -1137,11 +1137,6 @@ button{
   }
 }
 
-.classroom-room-item{
-  position:absolute;
-  z-index:4
-}
-
 .window{
   position:absolute;
   top:100px;
@@ -2020,9 +2015,7 @@ button{
 }
 
 
-/* =========================
-   SECRET TEACHER ZONE
-   ========================= */
+/* SECRET TEACHER ZONE */
 
 .secret-zone{
   margin-top:20px;
@@ -2392,12 +2385,6 @@ button{
   font-weight:1000
 }
 
-.secret-exit-btn{
-  margin-top:18px;
-  background:linear-gradient(135deg,#7c3aed,#db2777);
-  color:#fff
-}
-
 @keyframes secretLockFloat{
   0%,100%{
     transform:translateY(0) rotate(0)
@@ -2675,6 +2662,495 @@ button{
 }
 
 
+/* =========================================================
+   CINEMATIC FINAL — HORROR
+   ========================================================= */
+
+#cinematicEnding{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      #241029 0%,
+      #0c0610 38%,
+      #020103 72%,
+      #000 100%
+    );
+  opacity:0;
+  pointer-events:none;
+  transition:
+    opacity 3s ease,
+    background 3.5s ease;
+}
+
+#cinematicEnding.active{
+  display:flex;
+  opacity:1;
+}
+
+#cinematicEnding.dark{
+  background:#000;
+}
+
+#cinematicEnding::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(124,58,237,.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 20% 70%,
+      rgba(88,28,135,.09),
+      transparent 25%
+    ),
+    radial-gradient(
+      ellipse at 80% 25%,
+      rgba(220,38,127,.07),
+      transparent 25%
+    );
+  filter:blur(35px);
+  animation:horrorFog 8s ease-in-out infinite alternate;
+}
+
+@keyframes horrorFog{
+  from{
+    transform:translate3d(-2%,0,0) scale(1);
+    opacity:.65;
+  }
+
+  to{
+    transform:translate3d(2%,-2%,0) scale(1.08);
+    opacity:1;
+  }
+}
+
+.cinematic-content{
+  position:relative;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cinematic-face{
+  position:absolute;
+  left:50%;
+  top:44%;
+  width:230px;
+  height:285px;
+  transform:
+    translate(-50%,-50%)
+    scale(.58);
+  opacity:0;
+  filter:
+    drop-shadow(0 0 18px rgba(124,58,237,.24))
+    drop-shadow(0 0 45px rgba(0,0,0,.9));
+  animation:
+    terrifyingFaceAppear 6.2s ease forwards;
+}
+
+.cinematic-face::before{
+  content:"";
+  position:absolute;
+  left:-32px;
+  top:-22px;
+  width:294px;
+  height:320px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0,0,0,.9) 0%,
+      rgba(10,5,15,.75) 45%,
+      transparent 72%
+    );
+  filter:blur(13px);
+  z-index:0;
+}
+
+.cinematic-hair{
+  position:absolute;
+  left:25px;
+  top:3px;
+  width:180px;
+  height:135px;
+  z-index:4;
+  border-radius:
+    58% 52% 35% 30%;
+  background:
+    linear-gradient(
+      140deg,
+      #000 0%,
+      #080508 34%,
+      #1b1021 64%,
+      #030204 100%
+    );
+  box-shadow:
+    inset -18px -12px 20px rgba(124,58,237,.08),
+    0 12px 25px rgba(0,0,0,.85);
+}
+
+.cinematic-hair::before,
+.cinematic-hair::after{
+  content:"";
+  position:absolute;
+  bottom:-62px;
+  width:55px;
+  height:105px;
+  background:
+    linear-gradient(
+      160deg,
+      #030204,
+      #160d1c,
+      #000
+    );
+  border-radius:70% 40% 80% 35%;
+}
+
+.cinematic-hair::before{
+  left:-4px;
+  transform:rotate(10deg);
+}
+
+.cinematic-hair::after{
+  right:-8px;
+  transform:rotate(-10deg);
+}
+
+.cinematic-head{
+  position:absolute;
+  left:47px;
+  top:35px;
+  width:144px;
+  height:190px;
+  z-index:3;
+  border-radius:
+    47% 53% 48% 52%;
+  background:
+    radial-gradient(
+      circle at 48% 35%,
+      #25192c 0%,
+      #100a14 42%,
+      #050306 82%
+    );
+  border:
+    2px solid rgba(216,180,254,.10);
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,.95),
+    inset 0 -25px 25px rgba(124,58,237,.07),
+    0 0 30px rgba(0,0,0,.85);
+}
+
+.cinematic-head::before{
+  content:"";
+  position:absolute;
+  left:15px;
+  top:55px;
+  width:114px;
+  height:48px;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0,0,0,.9),
+      transparent 72%
+    );
+  filter:blur(5px);
+}
+
+.cinematic-head::after{
+  content:"";
+  position:absolute;
+  width:62px;
+  height:74px;
+  left:77px;
+  top:98px;
+  background:
+    linear-gradient(
+      56deg,
+      transparent 0 45%,
+      rgba(255,255,255,.07) 46% 48%,
+      transparent 49%
+    ),
+    linear-gradient(
+      125deg,
+      transparent 0 53%,
+      rgba(255,255,255,.05) 54% 56%,
+      transparent 57%
+    );
+  opacity:.8;
+  transform:rotate(7deg);
+}
+
+.cinematic-eye{
+  position:absolute;
+  top:82px;
+  width:29px;
+  height:10px;
+  z-index:9;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      ellipse,
+      #ffffff 0%,
+      #fb7185 22%,
+      #ef4444 48%,
+      #7f1d1d 72%,
+      transparent 100%
+    );
+  box-shadow:
+    0 0 7px #ef4444,
+    0 0 20px rgba(239,68,68,.65),
+    0 0 38px rgba(127,29,29,.55);
+  animation:
+    evilEyes 2.8s ease-in-out infinite;
+}
+
+.cinematic-eye.left{
+  left:29px;
+  transform:rotate(7deg);
+}
+
+.cinematic-eye.right{
+  right:29px;
+  transform:rotate(-7deg);
+}
+
+@keyframes evilEyes{
+  0%,100%{
+    opacity:.48;
+    filter:brightness(.7);
+  }
+
+  45%{
+    opacity:1;
+    filter:brightness(1.35);
+  }
+
+  55%{
+    opacity:.78;
+  }
+}
+
+.cinematic-eye::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:5px;
+  height:12px;
+  background:#09030a;
+  transform:
+    translate(-50%,-50%);
+  border-radius:50%;
+}
+
+.cinematic-nose{
+  position:absolute;
+  left:66px;
+  top:92px;
+  width:17px;
+  height:50px;
+  border-left:2px solid rgba(216,180,254,.10);
+  border-bottom:2px solid rgba(216,180,254,.05);
+  transform:rotate(5deg);
+}
+
+.cinematic-mouth{
+  position:absolute;
+  left:34px;
+  top:145px;
+  width:77px;
+  height:35px;
+  z-index:8;
+  border-bottom:
+    3px solid rgba(255,255,255,.18);
+  border-radius:
+    0 0 50px 50px;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0 32%,
+      rgba(0,0,0,.82) 33% 100%
+    );
+  box-shadow:
+    inset 0 -7px 12px rgba(124,58,237,.07);
+}
+
+.cinematic-mouth::before{
+  content:"";
+  position:absolute;
+  left:7px;
+  top:1px;
+  width:63px;
+  height:11px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #d1d5db 0 6px,
+      #111 6px 9px
+    );
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      94% 100%,
+      82% 48%,
+      73% 100%,
+      63% 48%,
+      53% 100%,
+      43% 48%,
+      33% 100%,
+      23% 48%,
+      13% 100%
+    );
+  opacity:.63;
+}
+
+.cinematic-shadow{
+  position:absolute;
+  left:50%;
+  bottom:-8px;
+  width:360px;
+  height:95px;
+  transform:translateX(-50%);
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0,0,0,.95),
+      rgba(64,16,90,.16),
+      transparent 72%
+    );
+  filter:blur(20px);
+  opacity:1;
+}
+
+.cinematic-message{
+  position:absolute;
+  left:50%;
+  top:72%;
+  width:min(94%,900px);
+  transform:
+    translate(-50%,35px)
+    scale(.97);
+  text-align:center;
+  opacity:0;
+  color:#f8fafc;
+  font-size:clamp(
+    1.35rem,
+    5vw,
+    3rem
+  );
+  font-weight:1000;
+  letter-spacing:1.3px;
+  text-shadow:
+    0 0 12px rgba(255,255,255,.18),
+    0 0 28px rgba(168,85,247,.34),
+    0 0 55px rgba(124,58,237,.22);
+  animation:
+    cinematicMessageAppear 4.8s ease 1.8s forwards;
+}
+
+.cinematic-subtitle{
+  display:block;
+  margin-top:14px;
+  color:#c4b5fd;
+  font-size:clamp(
+    .85rem,
+    3vw,
+    1.15rem
+  );
+  font-weight:700;
+  letter-spacing:.9px;
+  opacity:.8;
+}
+
+@keyframes terrifyingFaceAppear{
+
+  0%{
+    opacity:0;
+    transform:
+      translate(-50%,-46%)
+      scale(.58);
+    filter:
+      brightness(.15)
+      blur(7px);
+  }
+
+  20%{
+    opacity:.08;
+  }
+
+  42%{
+    opacity:.22;
+    transform:
+      translate(-50%,-50%)
+      scale(.78);
+    filter:
+      brightness(.35)
+      blur(2px);
+  }
+
+  65%{
+    opacity:.42;
+    filter:
+      brightness(.55)
+      blur(0);
+  }
+
+  100%{
+    opacity:.82;
+    transform:
+      translate(-50%,-50%)
+      scale(1);
+    filter:
+      brightness(.72)
+      blur(0);
+  }
+
+}
+
+@keyframes cinematicMessageAppear{
+
+  0%{
+    opacity:0;
+    transform:
+      translate(-50%,30px)
+      scale(.97);
+  }
+
+  35%{
+    opacity:.22;
+  }
+
+  68%{
+    opacity:.82;
+    transform:
+      translate(-50%,0)
+      scale(1);
+  }
+
+  100%{
+    opacity:1;
+    transform:
+      translate(-50%,0)
+      scale(1);
+  }
+
+}
+
+
 @media(max-width:680px){
 
   .wrap{
@@ -2862,6 +3338,17 @@ button{
   .secret-movie-option,
   .lightning-option{
     min-height:52px
+  }
+
+  .cinematic-face{
+    width:190px;
+    height:245px;
+    top:43%;
+  }
+
+  .cinematic-message{
+    top:70%;
+    padding:0 14px;
   }
 
 }
@@ -4535,8 +5022,51 @@ button{
 </div>
 
 
-<script>
+<!-- CINEMATIC FINAL -->
 
+<div
+  id="cinematicEnding"
+  aria-hidden="true"
+>
+
+  <div class="cinematic-content">
+
+    <div class="cinematic-face">
+
+      <div class="cinematic-shadow"></div>
+
+      <div class="cinematic-hair"></div>
+
+      <div class="cinematic-head">
+
+        <div class="cinematic-eye left"></div>
+
+        <div class="cinematic-eye right"></div>
+
+        <div class="cinematic-nose"></div>
+
+        <div class="cinematic-mouth"></div>
+
+      </div>
+
+    </div>
+
+    <div class="cinematic-message">
+
+      NOS VEMOS EN OTRO JUEGO 👋💜
+
+      <span class="cinematic-subtitle">
+        Until the next challenge... 😈
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
 
 /* =========================================================
    CORE
@@ -4584,10 +5114,7 @@ function shuffle(a){
       Math.random()*(i+1)
     );
 
-    [x[i],x[j]]=[
-      x[j],
-      x[i]
-    ];
+    [x[i],x[j]]=[x[j],x[i]];
 
   }
 
@@ -5340,9 +5867,7 @@ function scrollTop(){
 }
 
 
-/* =========================================================
-   LOGIN
-   ========================================================= */
+/* LOGIN */
 
 function startApp(){
 
@@ -5403,9 +5928,7 @@ document
   );
 
 
-/* =========================================================
-   QUESTIONS
-   ========================================================= */
+/* QUESTIONS */
 
 function currentQs(){
 
@@ -5629,9 +6152,7 @@ function showPhase(
 }
 
 
-/* =========================================================
-   REVIEW
-   ========================================================= */
+/* REVIEW */
 
 document
   .getElementById('reviewBtn')
@@ -5734,9 +6255,7 @@ document
   };
 
 
-/* =========================================================
-   LISTENING
-   ========================================================= */
+/* LISTENING */
 
 function stopAudio(){
 
@@ -6048,9 +6567,7 @@ document
   };
 
 
-/* =========================================================
-   BONUS
-   ========================================================= */
+/* BONUS */
 
 function showBonus(){
 
@@ -6204,9 +6721,7 @@ function showFinal(){
 }
 
 
-/* =========================================================
-   ORDER GAME
-   ========================================================= */
+/* ORDER GAME */
 
 const orderSentenceBank=[
 
@@ -6706,9 +7221,7 @@ document
   };
 
 
-/* =========================================================
-   VIDEO VERBS
-   ========================================================= */
+/* VIDEO VERBS */
 
 const videoVerbBank=[
 
@@ -7642,9 +8155,7 @@ document
   };
 
 
-/* =========================================================
-   ORIGINAL MOVIE BONUS
-   ========================================================= */
+/* ORIGINAL MOVIE BONUS */
 
 const movieBonusBank=[
 
@@ -7849,12 +8360,14 @@ function prepareMovieBonus(){
 
           b.onclick=
             ()=>{
+
               selectMovieChoice(
                 i,
                 'phrase',
                 opt,
                 b
               );
+
             };
 
           document
@@ -7880,12 +8393,14 @@ function prepareMovieBonus(){
 
           b.onclick=
             ()=>{
+
               selectMovieChoice(
                 i,
                 'movie',
                 opt,
                 b
               );
+
             };
 
           document
@@ -7949,14 +8464,6 @@ function selectMovieChoice(
     const correct=
       sel.phrase===q.answer &&
       sel.movie===q.movie;
-
-    parent
-      .querySelectorAll(
-        '.movie-choice'
-      )
-      .forEach(
-        x=>x.disabled=true
-      );
 
     document
       .querySelectorAll(
@@ -8196,9 +8703,11 @@ function finishMovieBonusFinal(){
 
   setTimeout(
     ()=>{
+
       fade.classList.add(
         'show-label'
       );
+
     },
     900
   );
@@ -8236,9 +8745,7 @@ document
   };
 
 
-/* =========================================================
-   FIRST-TIME SURPRISE
-   ========================================================= */
+/* FIRST-TIME SURPRISE */
 
 document
   .getElementById(
@@ -8390,9 +8897,7 @@ document
   };
 
 
-/* =========================================================
-   HEART GAME
-   ========================================================= */
+/* HEART GAME */
 
 let heartCount=0;
 let heartActive=false;
@@ -8572,9 +9077,7 @@ function catchHeart(){
 }
 
 
-/* =========================================================
-   FIREWORKS
-   ========================================================= */
+/* FIREWORKS */
 
 function launchFireworks(){
 
@@ -8714,18 +9217,11 @@ function launchFireworks(){
 }
 
 
-/* =========================================================
-   FIRST EXPERIENCE SURPRISE
-   ========================================================= */
+/* FIRST EXPERIENCE SURPRISE */
 
 function startSurprise(){
 
   hide('finalResult');
-
-  /*
-    FIRST TIME:
-    Heart game → Letter → Classroom
-  */
 
   show('heartGame');
 
@@ -8782,9 +9278,7 @@ document
   };
 
 
-/* =========================================================
-   FINAL EXIT
-   ========================================================= */
+/* FINAL EXIT */
 
 function triggerFinalExit(){
 
@@ -8932,10 +9426,7 @@ function startRestartLoading(){
 }
 
 
-/* =========================================================
-   NEW RESTART:
-   SECRET ZONE DIRECTLY
-   ========================================================= */
+/* SECRET ZONE DIRECTLY AFTER RESTART */
 
 function restartWithoutPassword(){
 
@@ -8960,14 +9451,6 @@ function restartWithoutPassword(){
   hide('splitExit');
 
   show('app');
-
-  /*
-    IMPORTANTE:
-    No vuelve al examen.
-    No pide contraseña.
-    No repite corazones,
-    carta ni salón.
-  */
 
   replayMode=false;
 
@@ -8994,14 +9477,11 @@ function restartWithoutPassword(){
   hide('classroom');
   hide('thanksModal');
 
-  /*
-    Entramos directamente
-    a la nueva experiencia.
-  */
-
   show('secretZone');
 
   document.body.style.overflow='';
+
+  cinematicStarted=false;
 
   initSecretZone();
 
@@ -9018,12 +9498,7 @@ document
   restartWithoutPassword;
 
 
-/* =========================================================
-   SECRET ZONE
-   ========================================================= */
-
-
-/* MOVIE MYSTERY */
+/* SECRET ZONE */
 
 const secretMovieBank=[
 
@@ -9085,8 +9560,6 @@ let secretMovieScore=0;
 let secretMovieClueIndex=0;
 let secretMovieAnswered=false;
 
-
-/* LIGHTNING */
 
 const secretLightningBank=[
 
@@ -9281,9 +9754,7 @@ let secretLightningRunning=false;
 let secretLightningAnswered=false;
 
 
-/* =========================================================
-   INIT SECRET ZONE
-   ========================================================= */
+/* INIT SECRET ZONE */
 
 function initSecretZone(){
 
@@ -9313,9 +9784,7 @@ function initSecretZone(){
 }
 
 
-/* =========================================================
-   INIT MOVIE MYSTERY
-   ========================================================= */
+/* INIT MOVIE MYSTERY */
 
 function initSecretMovie(){
 
@@ -9484,10 +9953,12 @@ function renderMovieMystery(){
 
       btn.onclick=
         ()=>{
+
           answerSecretMovie(
             movie,
             btn
           );
+
         };
 
       options.appendChild(
@@ -9736,7 +10207,8 @@ function finishSecretMovie(){
 
 
 /* =========================================================
-   START LIGHTNING
+   ENGLISH LIGHTNING
+   START SOLO UNA VEZ
    ========================================================= */
 
 document
@@ -9781,6 +10253,10 @@ function prepareLightningGame(){
     .textContent=
     'SCORE: 0';
 
+  /*
+    START SOLO EN LA PRIMERA RONDA.
+  */
+
   document
     .getElementById(
       'startLightningRound'
@@ -9795,12 +10271,14 @@ function prepareLightningGame(){
     .textContent=
     '⚡ Press START to begin.';
 
-  renderLightningQuestion();
+  renderLightningQuestion(false);
 
 }
 
 
-function renderLightningQuestion(){
+function renderLightningQuestion(
+  autoStart=false
+){
 
   clearInterval(
     secretLightningTimer
@@ -9883,14 +10361,16 @@ function renderLightningQuestion(){
       btn.textContent=
         option;
 
-      btn.disabled=true;
+      btn.disabled=!autoStart;
 
       btn.onclick=
         ()=>{
+
           answerLightning(
             option,
             btn
           );
+
         };
 
       box.appendChild(
@@ -9899,6 +10379,20 @@ function renderLightningQuestion(){
 
     }
   );
+
+  /*
+    Primera ronda:
+    espera START.
+
+    Siguientes rondas:
+    empiezan automáticamente.
+  */
+
+  if(autoStart){
+
+    startLightningTimer();
+
+  }
 
 }
 
@@ -9921,8 +10415,9 @@ document
         '#lightningOptions .lightning-option'
       )
       .forEach(
-        btn=>
-          btn.disabled=false
+        btn=>{
+          btn.disabled=false;
+        }
       );
 
     startLightningTimer();
@@ -9949,6 +10444,27 @@ function startLightningTimer(){
     )
     .textContent=
     '⚡ GO!';
+
+  document
+    .getElementById(
+      'lightningTime'
+    )
+    .textContent=
+    '4';
+
+  document
+    .getElementById(
+      'lightningTime'
+    )
+    .classList
+    .remove('danger');
+
+  document
+    .getElementById(
+      'lightningBar'
+    )
+    .style
+    .width='100%';
 
   secretLightningTimer=
     setInterval(
@@ -10010,9 +10526,7 @@ function startLightningTimer(){
 
           secretLightningRunning=false;
 
-          revealLightningAnswer(
-            true
-          );
+          revealLightningAnswer();
 
         }
 
@@ -10051,7 +10565,9 @@ function answerLightning(
       '#lightningOptions .lightning-option'
     )
     .forEach(
-      x=>x.disabled=true
+      x=>{
+        x.disabled=true;
+      }
     );
 
   if(
@@ -10207,14 +10723,12 @@ function nextLightningQuestion(){
 
   }
 
-  renderLightningQuestion();
+  /*
+    NUEVA PALABRA:
+    comienza automáticamente.
+  */
 
-  document
-    .getElementById(
-      'startLightningRound'
-    )
-    .classList
-    .remove('hidden');
+  renderLightningQuestion(true);
 
 }
 
@@ -10247,12 +10761,12 @@ function finishSecretLightning(){
 
   scrollTop();
 
+  startCinematicEnding();
+
 }
 
 
-/* =========================================================
-   CLOSE / EXTRA SAFETY
-   ========================================================= */
+/* CLOSE / EXTRA SAFETY */
 
 function showThanksModal(){
 
@@ -10303,6 +10817,71 @@ document
     }
   );
 
+
+/* =========================================================
+   CINEMATIC FINAL
+   ========================================================= */
+
+let cinematicStarted=false;
+
+
+function startCinematicEnding(){
+
+  if(cinematicStarted){
+    return;
+  }
+
+  cinematicStarted=true;
+
+  const ending=
+    document.getElementById(
+      'cinematicEnding'
+    );
+
+  if(!ending)return;
+
+  setTimeout(()=>{
+
+    ending.style.display=
+      'flex';
+
+    ending.classList.remove(
+      'active',
+      'dark'
+    );
+
+    void ending.offsetWidth;
+
+    ending.classList.add(
+      'active'
+    );
+
+    /*
+      Oscurecimiento progresivo.
+    */
+
+    setTimeout(()=>{
+
+      ending.classList.add(
+        'dark'
+      );
+
+    },4200);
+
+    /*
+      Negro absoluto.
+    */
+
+    setTimeout(()=>{
+
+      ending.style.background=
+        '#000';
+
+    },7200);
+
+  },4200);
+
+}
 
 </script>
 
