@@ -194,6 +194,84 @@ button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:tran
 .video-challenge{background:linear-gradient(135deg,#111827,#312e81);color:#fff}.video-stage{max-width:900px;margin:auto}.video-top{display:flex;justify-content:space-between;gap:12px;align-items:center;font-weight:900;color:#fde68a;flex-wrap:wrap}.video-instructions{margin:14px 0 18px;line-height:1.7;color:#e5e7eb}.verb-video-screen{position:relative;background:linear-gradient(145deg,#0f172a,#1e1b4b);border:3px solid #8b5cf6;border-radius:24px;padding:20px;box-shadow:inset 0 0 35px #0005,0 15px 35px #0004;overflow:hidden}.film-strip{position:absolute;top:10px;right:16px;opacity:.55;font-size:1.5rem}.verb-meaning{text-align:center;color:#c4b5fd;font-weight:800;margin-bottom:15px}.verb-table{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:720px;margin:0 auto}.verb-cell{padding:14px 8px;border-radius:14px;background:#ffffff13;border:2px solid #ffffff1f;text-align:center;font-weight:900;word-break:break-word}.verb-cell.label{font-size:.72rem;color:#cbd5e1;background:#ffffff09}.verb-cell.target-form{border-color:#fbbf24;background:#fbbf2430;box-shadow:0 0 0 2px #fbbf2444,0 0 28px #fbbf2433;animation:pulseTarget .8s ease-in-out infinite alternate}.verb-prompt{text-align:center;margin:18px 0 9px;color:#e9d5ff;font-weight:800}.verb-highlight{font-size:clamp(1.9rem,7vw,3.1rem);text-align:center;font-weight:1000;letter-spacing:2px;color:#fff;text-shadow:0 0 20px #c084fc;min-height:58px;display:grid;place-items:center}.video-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.video-option{padding:14px;border:2px solid #8b5cf6;background:#ffffff10;color:#fff;border-radius:14px;font-weight:900;cursor:pointer}.video-option:hover{background:#7c3aed44;border-color:#c4b5fd}.video-option.correct{background:#16a34a!important;border-color:#86efac!important}.video-option.wrong{background:#dc2626!important;border-color:#fca5a5!important}.video-option:disabled{cursor:default;opacity:.95}.video-feedback{margin-top:14px;padding:14px;background:#ffffff10;border-radius:14px;line-height:1.6;text-align:center}.video-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.video-progress{height:9px;background:#ffffff1a;border-radius:999px;overflow:hidden;margin-top:16px}.video-progress>div{height:100%;width:0;background:linear-gradient(90deg,#22d3ee,#a855f7,#f472b6)}.video-countdown{text-align:center;color:#fef3c7;font-weight:1000;margin-top:14px}.video-result{margin-top:18px;padding:16px;border-radius:16px;background:#ffffff12;text-align:center;line-height:1.7}.video-stage .btn.primary{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff}
 @keyframes pulseTarget{to{transform:translateY(-3px) scale(1.02);filter:brightness(1.15)}}
 @media(max-width:680px){.video-options{grid-template-columns:1fr}.verb-table{gap:5px}.verb-cell{padding:11px 5px;font-size:.84rem}.verb-cell.label{font-size:.64rem}.verb-video-screen{padding:14px}.video-top{font-size:.9rem}}
+
+/* MOVIE BONUS */
+.movie-bonus{margin-top:20px;background:linear-gradient(135deg,#fdf4ff,#eff6ff);border:2px solid #ddd6fe}.movie-bonus-header{text-align:center;font-size:clamp(1.55rem,5vw,2.25rem);font-weight:1000;color:#5b21b6;line-height:1.2;margin-bottom:10px}.movie-bonus-intro{text-align:center;color:#475569;line-height:1.7;max-width:760px;margin:0 auto 20px}.movie-rounds{display:grid;gap:16px}.movie-round{background:#fff;border:2px solid #e5e7eb;border-radius:20px;padding:18px;box-shadow:0 8px 20px rgba(15,23,42,.05)}.movie-emoji{font-size:2.25rem;letter-spacing:5px;margin-bottom:8px}.movie-number{font-weight:1000;color:#7c3aed;margin-bottom:8px}.movie-phrase{font-size:clamp(1.08rem,3.5vw,1.3rem);font-weight:900;line-height:1.55;color:#111827;margin-bottom:12px}.movie-label{font-size:.82rem;font-weight:900;color:#64748b;margin:10px 0 7px}.movie-choice-row{display:flex;flex-wrap:wrap;gap:8px}.movie-choice{border:2px solid #e5e7eb;background:#f8fafc;color:#1f2937;border-radius:12px;padding:10px 13px;font-weight:800;cursor:pointer;transition:.2s}.movie-choice:hover{border-color:#a78bfa;background:#f5f3ff;transform:translateY(-1px)}.movie-choice.selected{border-color:#7c3aed;background:#ede9fe;color:#5b21b6;box-shadow:0 0 0 2px rgba(124,58,237,.08)}.movie-choice.correct{border-color:#22c55e;background:#dcfce7;color:#166534}.movie-choice.wrong{border-color:#ef4444;background:#fee2e2;color:#991b1b}.movie-round-msg{margin-top:12px;font-weight:800;min-height:24px}.movie-bonus-result{margin-top:18px;padding:16px;border-radius:16px;background:#ecfdf5;color:#166534;text-align:center;font-weight:900;line-height:1.65}.movie-bonus .finish-game-btn{margin-top:4px}
+
+/* FINAL CLOSE / RESTART */
+#splitExit{position:fixed;inset:0;background:#000;z-index:100000;display:none;align-items:center;justify-content:center;overflow:hidden}
+#movieFinishFade{position:fixed;inset:0;background:#fff;z-index:120000;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity 2.4s ease;pointer-events:none}
+#movieFinishFade.active{display:flex;opacity:1}
+#movieFinishFade.black{background:#000;color:#fff;opacity:1}
+.movie-finish-label{font-size:clamp(2.4rem,9vw,5rem);font-weight:1000;letter-spacing:4px;color:#111827;opacity:0;transform:scale(.96);transition:opacity .35s ease,transform .35s ease}
+#movieFinishFade.show-label .movie-finish-label{opacity:1;transform:scale(1)}
+#movieFinishFade.black .movie-finish-label{color:#fff}
+
+#splitExit .restart-box{position:relative;z-index:2;text-align:center;color:#fff;padding:24px;max-width:90vw;opacity:0;transform:scale(.96);transition:opacity .45s ease,transform .45s ease}
+#splitExit.show-restart .restart-box{opacity:1;transform:scale(1)}
+#splitExit .restart-title{font-size:clamp(1.8rem,6vw,3rem);font-weight:1000;margin-bottom:10px}
+#splitExit .restart-sub{font-size:1rem;color:#d1d5db;margin-bottom:22px;line-height:1.6}
+.restart-loader-wrap{width:min(420px,84vw);margin:0 auto 20px}
+.restart-loader-track{height:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.16);border-radius:999px;overflow:hidden;box-shadow:0 0 20px rgba(139,92,246,.16)}
+.restart-loader-bar{height:100%;width:0;background:linear-gradient(90deg,#7c3aed,#22d3ee,#4ade80);border-radius:999px;transition:width .08s linear;box-shadow:0 0 18px rgba(74,222,128,.55)}
+.restart-percent{margin-top:9px;color:#c4b5fd;font-size:.9rem;font-weight:900;letter-spacing:.6px}
+.ready-message{display:none;font-size:clamp(1.7rem,6vw,2.8rem);font-weight:1000;color:#86efac;margin:0 0 14px;text-shadow:0 0 22px rgba(74,222,128,.38);animation:readyPulse 1.5s ease-in-out infinite}
+#splitExit.loaded .restart-loader-wrap{display:none}
+#splitExit.loaded .ready-message{display:block}
+#splitExit.loaded .restart-sub{display:none}
+#splitExit .restart-btn{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  border:0;
+  border-radius:16px;
+  padding:15px 28px;
+  font-size:1rem;
+  font-weight:900;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(135deg,#7c3aed,#db2777);
+  background-size:180% 180%;
+  box-shadow:0 10px 30px rgba(124,58,237,.35);
+  animation:restartFloat 3.2s ease-in-out infinite;
+  transition:box-shadow .35s ease,transform .35s ease;
+}
+#splitExit .restart-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  border-radius:inherit;
+  background:linear-gradient(90deg,transparent 0%,rgba(74,222,128,.08) 28%,rgba(74,222,128,.92) 50%,rgba(74,222,128,.10) 72%,transparent 100%);
+  background-size:220% 100%;
+  transform:translateX(-120%);
+  opacity:0;
+}
+#splitExit .restart-btn:hover{
+  transform:translateY(-3px) scale(1.015);
+  box-shadow:0 14px 34px rgba(34,197,94,.32),0 0 0 1px rgba(134,239,172,.18);
+  background:linear-gradient(135deg,#7c3aed,#db2777);
+}
+#splitExit .restart-btn:hover::before{
+  opacity:1;
+  animation:restartEnergy 1.45s ease-in-out infinite;
+}
+#splitExit .restart-btn:active{transform:translateY(-1px) scale(.99)}
+@keyframes restartFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+@keyframes restartEnergy{
+  0%{transform:translateX(-120%);opacity:0}
+  18%{opacity:.35}
+  48%{opacity:1}
+  72%{opacity:.7}
+  100%{transform:translateX(120%);opacity:0}
+}
+@keyframes readyPulse{
+  0%,100%{transform:translateY(0);opacity:.92}
+  50%{transform:translateY(-4px);opacity:1}
+}
 </style>
 </head>
 <body>
@@ -310,6 +388,16 @@ button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:tran
   </div>
 </section>
 
+<section id="movieBonus" class="card hidden movie-bonus">
+  <div class="movie-bonus-header">🎬✨ BONUS — ¡ADIVINA LA PELÍCULA! ✨🎬</div>
+  <p class="movie-bonus-intro">Completa la frase y luego elige de qué película es. Son solo 3 rondas: <strong>Cars</strong>, <strong>Buscando a Nemo</strong> y <strong>Chicken Little</strong>. 🏎️🐠🐔</p>
+  <div id="movieRounds" class="movie-rounds"></div>
+  <div id="movieBonusResult" class="movie-bonus-result hidden"></div>
+  <div class="actions" style="justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px">
+    <button id="finishMovieBonus" class="btn finish-game-btn" type="button">🏁 FINISH</button>
+  </div>
+</section>
+
 <section id="heartGame" class="card heart-game hidden center">
   <div style="font-size:4rem">💜</div>
   <h2 style="color:#5b21b6">💜 Un último reto para la Profe Mafe</h2>
@@ -374,9 +462,22 @@ button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:tran
 <div class="card center" style="margin-top:16px;color:#64748b">English Challenge • Profe Mafe 💜</div>
 </div></div>
 
+<div id="movieFinishFade" aria-hidden="true"><div class="movie-finish-label">FINISH</div></div>
+<div id="splitExit" aria-hidden="true">
+  <div class="restart-box">
+    <div class="restart-sub">Preparando una nueva partida...</div>
+    <div class="restart-loader-wrap" aria-live="polite">
+      <div class="restart-loader-track"><div id="restartLoaderBar" class="restart-loader-bar"></div></div>
+      <div id="restartPercent" class="restart-percent">0%</div>
+    </div>
+    <div id="readyMessage" class="ready-message">✨ READY TO PLAY ✨</div>
+    <button id="restartAll" class="restart-btn" type="button" disabled>🔄 VOLVER A JUGAR</button>
+  </div>
+</div>
+
 <script>
 const PASSWORDS=['MAFELAMEJOR','0997'];
-let section='a1',qIndex=0,answers=[],a1=0,listenIndex=0,listenAnswers=[],listenScore=0,advanced=0,bonus=0,bonusPick=null;
+let section='a1',qIndex=0,answers=[],a1=0,listenIndex=0,listenAnswers=[],listenScore=0,advanced=0,bonus=0,bonusPick=null,replayMode=false;
 let speechActive=false,orderTimerId=null,orderEndTime=0,orderStarted=false,winnerDeclared=false;
 
 function shuffle(a){const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
@@ -449,7 +550,7 @@ function startApp(){const pass=document.getElementById('passwordInput').value.tr
 document.getElementById('loginBtn').onclick=startApp;document.getElementById('passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')startApp()});
 
 function currentQs(){return section==='a1'?a1Qs:advQs}
-function loadQuestion(){const q=currentQs()[qIndex];show('quiz');show('progress');hide('phaseResult');hide('review');hide('listening');hide('listeningResult');hide('challenge');hide('bonus');hide('finalResult');document.getElementById('qTag').textContent=`${section==='a1'?'A1':'C1 / C2'} • Question ${qIndex+1}`;document.getElementById('counter').textContent=section==='a1'?`Question ${qIndex+1} of 10`:`Question ${qIndex+1} of 5`;document.getElementById('scoreTop').textContent=section==='a1'?`A1: ${a1}`:`C1/C2: ${advanced}`;document.getElementById('fill').style.width=`${((qIndex+1)/(section==='a1'?10:5))*100}%`;document.getElementById('question').textContent=q.question;const box=document.getElementById('options');box.innerHTML='';q.options.forEach((o,i)=>{const b=document.createElement('button');b.className='opt';b.textContent=`${String.fromCharCode(65+i)}. ${o}`;b.onclick=()=>pickAnswer(i,b);box.appendChild(b)});document.getElementById('nextBtn').classList.add('hidden');scrollTop()}
+function loadQuestion(){const q=currentQs()[qIndex];show('quiz');show('progress');hide('phaseResult');hide('review');hide('listening');hide('listeningResult');hide('challenge');hide('bonus');hide('movieBonus');hide('finalResult');document.getElementById('qTag').textContent=`${section==='a1'?'A1':'C1 / C2'} • Question ${qIndex+1}`;document.getElementById('counter').textContent=section==='a1'?`Question ${qIndex+1} of 10`:`Question ${qIndex+1} of 5`;document.getElementById('scoreTop').textContent=section==='a1'?`A1: ${a1}`:`C1/C2: ${advanced}`;document.getElementById('fill').style.width=`${((qIndex+1)/(section==='a1'?10:5))*100}%`;document.getElementById('question').textContent=q.question;const box=document.getElementById('options');box.innerHTML='';q.options.forEach((o,i)=>{const b=document.createElement('button');b.className='opt';b.textContent=`${String.fromCharCode(65+i)}. ${o}`;b.onclick=()=>pickAnswer(i,b);box.appendChild(b)});document.getElementById('nextBtn').classList.add('hidden');scrollTop()}
 function pickAnswer(i,b){if(answers[qIndex]!==undefined)return;answers[qIndex]=i;b.classList.add('sel');document.querySelectorAll('#options .opt').forEach(x=>{x.disabled=true});document.getElementById('nextBtn').classList.remove('hidden')}
 document.getElementById('nextBtn').onclick=()=>{qIndex++;if(qIndex>=currentQs().length){if(section==='a1'){a1=answers.reduce((s,v,i)=>s+(v===a1Qs[i].answer?1:0),0);showPhase('A1',a1,10)}else{advanced=answers.reduce((s,v,i)=>s+(v===advQs[i].answer?1:0),0);showPhase('C1/C2',advanced,5)}}else loadQuestion()}
 function showPhase(name,score,total){hide('quiz');hide('progress');show('phaseResult');document.getElementById('phaseTitle').textContent=`🎉 ${name} Phase Complete!`;document.getElementById('phaseScore').textContent=`${score} / ${total}`;document.getElementById('phaseMessage').textContent=score===total?'¡Perfecto! Excelente resultado.':score>=total*.8?'¡Muy bien! Tienes una base muy sólida.':score>=total*.6?'Buen trabajo. Hay algunos puntos que vale la pena reforzar.':'No te preocupes. La revisión te ayudará a entender cada punto.';document.getElementById('reviewBtn').textContent='📚 Review answers'}
@@ -689,6 +790,15 @@ function finishVideoChallenge(){
   clearInterval(videoTimerId);
   videoRunning=false;
   document.getElementById('nextVideoRound').classList.add('hidden');
+
+  if(replayMode){
+    prepareMovieBonus();
+    hide('videoChallenge');
+    show('movieBonus');
+    scrollTop();
+    return;
+  }
+
   document.getElementById('videoResult').classList.remove('hidden');
   document.getElementById('videoResult').innerHTML=`🎬 <strong>Video Challenge finished!</strong><br><span style="font-size:1.6rem;font-weight:1000;color:#5b21b6">${videoScore} / ${videoQuestions.length}</span><br>¡Excelente!<div style="margin-top:16px"><button id="replayVideoChallenge" class="btn pink" type="button">🔄 Volver a jugar</button></div>`;
   document.getElementById('finishVideoChallenge').classList.remove('hidden');
@@ -701,20 +811,102 @@ function finishVideoChallenge(){
   };
 }
 document.getElementById('startVideoChallenge').onclick=()=>{document.getElementById('startVideoChallenge').classList.add('hidden');startVideoRoundTimer()};
+
+/* MOVIE BONUS — only after a restart */
+const movieBonusBank=[
+  {emoji:'🏎️🚗🏁🔥', movie:'Cars', phrase:'I am _____.', answer:'speed', movieOptions:['Cars','Toy Story','Ratatouille','The Incredibles'], phraseOptions:['speed','tired','slow','ready']},
+  {emoji:'🌊🐠🔎🐢💙', movie:'Finding Nemo', phrase:'Just keep _____.', answer:'swimming', movieOptions:['Finding Nemo','Moana','Luca','The Little Mermaid'], phraseOptions:['swimming','running','driving','flying']},
+  {emoji:'🐔🐥🌌☁️🏡', movie:'Chicken Little', phrase:'The sky is _____.', answer:'falling', movieOptions:['Chicken Little','Bolt','Up','Rio'], phraseOptions:['falling','blue','empty','shining']}
+];
+let movieBonusData=[];
+let movieSelections=[];
+function shuffleMovie(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function prepareMovieBonus(){
+  movieBonusData=shuffleMovie(movieBonusBank).map(q=>({...q,phraseOptions:shuffleMovie(q.phraseOptions),movieOptions:shuffleMovie(q.movieOptions)}));
+  movieSelections=movieBonusData.map(()=>({phrase:null,movie:null,done:false}));
+  const box=document.getElementById('movieRounds');
+  box.innerHTML='';
+  document.getElementById('movieBonusResult').classList.add('hidden');
+  movieBonusData.forEach((q,i)=>{
+    const card=document.createElement('div');
+    card.className='movie-round';
+    card.innerHTML=`<div class="movie-emoji">${q.emoji}</div><div class="movie-number">Ronda ${i+1} de 3</div><div class="movie-phrase">${q.phrase}</div><div class="movie-label">1️⃣ Completa la frase:</div><div class="movie-choice-row" id="phraseChoices${i}"></div><div class="movie-label">2️⃣ ¿De qué película es?</div><div class="movie-choice-row" id="movieChoices${i}"></div><div class="movie-round-msg" id="movieMsg${i}"></div>`;
+    box.appendChild(card);
+    q.phraseOptions.forEach(opt=>{const b=document.createElement('button');b.type='button';b.className='movie-choice';b.textContent=opt;b.onclick=()=>selectMovieChoice(i,'phrase',opt,b);document.getElementById(`phraseChoices${i}`).appendChild(b)});
+    q.movieOptions.forEach(opt=>{const b=document.createElement('button');b.type='button';b.className='movie-choice';b.textContent=opt;b.onclick=()=>selectMovieChoice(i,'movie',opt,b);document.getElementById(`movieChoices${i}`).appendChild(b)});
+  });
+}
+function selectMovieChoice(i,type,value,button){
+  if(movieSelections[i].done)return;
+  movieSelections[i][type]=value;
+  const parent=button.parentElement;
+  parent.querySelectorAll('.movie-choice').forEach(x=>x.classList.remove('selected'));
+  button.classList.add('selected');
+  const sel=movieSelections[i];
+  if(sel.phrase!==null && sel.movie!==null){
+    sel.done=true;
+    const q=movieBonusData[i];
+    const correct=sel.phrase===q.answer && sel.movie===q.movie;
+    parent.querySelectorAll('.movie-choice').forEach(x=>x.disabled=true);
+    document.querySelectorAll(`#phraseChoices${i} .movie-choice,#movieChoices${i} .movie-choice`).forEach(x=>x.disabled=true);
+    const msg=document.getElementById(`movieMsg${i}`);
+    if(correct){msg.innerHTML='✅ ¡Correcta!';msg.style.color='#166534';
+      document.querySelectorAll(`#phraseChoices${i} .movie-choice`).forEach(x=>{if(x.textContent===q.answer)x.classList.add('correct')});
+      document.querySelectorAll(`#movieChoices${i} .movie-choice`).forEach(x=>{if(x.textContent===q.movie)x.classList.add('correct')});
+    }else{msg.innerHTML=`❌ Era: <strong>${q.answer}</strong> — <strong>${q.movie}</strong>`;msg.style.color='#991b1b';
+      document.querySelectorAll(`#phraseChoices${i} .movie-choice`).forEach(x=>{if(x.textContent===q.answer)x.classList.add('correct')});
+      document.querySelectorAll(`#movieChoices${i} .movie-choice`).forEach(x=>{if(x.textContent===q.movie)x.classList.add('correct')});
+      if(sel.phrase!==q.answer)document.querySelectorAll(`#phraseChoices${i} .movie-choice`).forEach(x=>{if(x.textContent===sel.phrase)x.classList.add('wrong')});
+      if(sel.movie!==q.movie)document.querySelectorAll(`#movieChoices${i} .movie-choice`).forEach(x=>{if(x.textContent===sel.movie)x.classList.add('wrong')});
+    }
+    const allDone=movieSelections.every(x=>x.done);
+    if(allDone){
+      const correctCount=movieSelections.reduce((sum,x,idx)=>sum+(x.phrase===movieBonusData[idx].answer&&x.movie===movieBonusData[idx].movie?1:0),0);
+      const result=document.getElementById('movieBonusResult');
+      result.innerHTML=`🎬 <strong>Bonus terminado:</strong> ${correctCount} / 3 correctas. ¡Muy bien! 💜`;
+      result.classList.remove('hidden');
+    }
+  }
+}
+
+function finishMovieBonusFinal(){
+  const fade=document.getElementById('movieFinishFade');
+  if(!fade)return;
+  document.body.style.overflow='hidden';
+  fade.style.display='flex';
+  fade.classList.remove('active','show-label','black');
+  void fade.offsetWidth;
+  fade.classList.add('active');
+  setTimeout(()=>{
+    fade.classList.add('show-label');
+  },900);
+  setTimeout(()=>{
+    fade.classList.remove('show-label');
+    fade.classList.add('black');
+    document.body.style.overflow='hidden';
+  },2400);
+}
+
+document.getElementById('finishMovieBonus').onclick=()=>{
+  clearTimeout(window.movieFinishTimer);
+  finishMovieBonusFinal();
+};
+
 document.getElementById('nextVideoRound').onclick=()=>advanceVideoRound();
 document.getElementById('toVideoFromOrder').onclick=()=>{hide('orderDone');show('videoChallenge');prepareVideoChallenge();scrollTop()};
 document.getElementById('finishVideoChallenge').onclick=()=>{
+  if(replayMode){ finishVideoChallenge(); return; }
   finishVideoChallenge();
   const modal=document.getElementById('thanksModal');
   modal.style.display='flex';
   const box=modal.querySelector('.modal-box');
   box.innerHTML=`<div class="modal-big">💜🍫🎉</div><h2>¡Gracias por participar!</h2><p>Gracias, Profe Mafe, por hacer parte de este pequeño challenge. Esperamos que hayas disfrutado cada pregunta, cada juego y cada sorpresa. 🥹💜</p><button id="closeThanks" class="btn pink">✨ Cerrar</button>`;
-  document.getElementById('closeThanks').onclick=()=>{modal.style.display='none'};
+  document.getElementById('closeThanks').onclick=()=>triggerFinalExit();
   scrollTop();
   clearTimeout(window.finalThanksTimer);
   window.finalThanksTimer=setTimeout(()=>{
     box.innerHTML=`<div class="final-created-icon" style="font-size:2.4rem;margin-bottom:10px">🌷✨💜</div><h2 style="color:#7c3aed;font-size:clamp(1.9rem,6vw,3rem);line-height:1.08;margin-bottom:14px">Este juego fue creado por<br>Joan Martinez 💜</h2><p style="font-size:1rem;line-height:1.7;color:#475569;max-width:600px;margin:0 auto"><strong>Para que pasaran un rato agradable, aprendieran, se divirtieran y compartieran un momento especial. ✨</strong><br><br><strong style="font-size:1.15rem;color:#7c3aed">Y ahora... ¡un fuerte aplauso para la Teacher Mafe por su dedicación y compromiso! 👏💜</strong></p><button id="closeThanks" class="btn pink" style="margin-top:20px">💜 Cerrar</button>`;
-    document.getElementById('closeThanks').onclick=()=>{modal.style.display='none'};
+    document.getElementById('closeThanks').onclick=()=>triggerFinalExit();
   },6000);
 };
 
@@ -763,7 +955,18 @@ function catchHeart(){
 /* SURPRISE + FINAL FLOW */
 function launchFireworks(){const c=document.getElementById('fireworks');c.innerHTML='';const colors=['#ff0055','#ff2d95','#ff00ff','#a855f7','#7c3aed','#2563eb','#00d9ff','#00f5ff','#00ff85','#7cff00','#ffe600','#ff9d00','#ff4500'];for(let burst=0;burst<22;burst++){setTimeout(()=>{const x=35+Math.random()*(innerWidth-70),y=35+Math.random()*innerHeight*.72;const b=document.createElement('div');b.className='burst';b.style.left=x+'px';b.style.top=y+'px';b.style.setProperty('--c',colors[Math.floor(Math.random()*colors.length)]);c.appendChild(b);for(let i=0;i<70;i++){const p=document.createElement('div');p.className='part';p.style.left=x+'px';p.style.top=y+'px';const a=Math.PI*2*i/70,d=80+Math.random()*240;p.style.setProperty('--x',Math.cos(a)*d+'px');p.style.setProperty('--y',Math.sin(a)*d+'px');p.style.setProperty('--c',colors[Math.floor(Math.random()*colors.length)]);c.appendChild(p);setTimeout(()=>p.remove(),1900)}setTimeout(()=>b.remove(),800)},burst*220)}}
 
-function startSurprise(){hide('finalResult');show('heartGame');initHeartGame();scrollTop()}
+function startSurprise(){
+  hide('finalResult');
+  if(replayMode){
+    hide('heartGame');hide('letter');hide('classroom');
+    show('orderGame');
+    initOrderGame();
+  }else{
+    show('heartGame');
+    initHeartGame();
+  }
+  scrollTop();
+}
 document.getElementById('seeSurprise').onclick=startSurprise;
 document.getElementById('heartStart').onclick=startHeartGame;
 
@@ -771,6 +974,78 @@ document.getElementById('meetMafe').onclick=()=>{hide('letter');show('classroom'
 
 document.getElementById('startGames').onclick=()=>{hide('classroom');show('orderGame');initOrderGame();scrollTop()};
 
+
+function triggerFinalExit(){
+  const modal=document.getElementById('thanksModal');
+  if(modal) modal.style.display='none';
+  const exit=document.getElementById('splitExit');
+  if(!exit)return;
+  exit.style.display='flex';
+  exit.classList.remove('show-restart','loaded');
+  restartReady=false;
+  document.body.style.overflow='hidden';
+  setTimeout(()=>{
+    exit.classList.add('show-restart');
+    startRestartLoading();
+  },250);
+}
+
+let restartReady=false;
+let restartLoadingTimer=null;
+function startRestartLoading(){
+  const exit=document.getElementById('splitExit');
+  const bar=document.getElementById('restartLoaderBar');
+  const percent=document.getElementById('restartPercent');
+  const btn=document.getElementById('restartAll');
+  if(!exit||!bar||!percent||!btn)return;
+  restartReady=false;
+  exit.classList.remove('loaded');
+  btn.disabled=true;
+  btn.textContent='🔄 CARGANDO...';
+  let value=0;
+  clearInterval(restartLoadingTimer);
+  bar.style.width='0%';
+  percent.textContent='0%';
+  restartLoadingTimer=setInterval(()=>{
+    value=Math.min(100,value+1);
+    bar.style.width=value+'%';
+    percent.textContent=value+'%';
+    if(value>=100){
+      clearInterval(restartLoadingTimer);
+      restartReady=true;
+      exit.classList.add('loaded');
+      btn.disabled=false;
+      btn.textContent='🔄 VOLVER A JUGAR';
+    }
+  },45);
+}
+
+function restartWithoutPassword(){
+  if(!restartReady)return;
+  clearInterval(restartLoadingTimer);
+  stopAudio();
+  clearInterval(orderTimerId);
+  clearInterval(videoTimerId);
+  hide('splitExit');
+  show('app');
+  replayMode=true;
+  prepareExam();
+  section='a1';
+  qIndex=0;
+  answers=[];
+  listenIndex=0;
+  listenAnswers=[];
+  a1=0;
+  listenScore=0;
+  advanced=0;
+  bonus=0;
+  bonusPick=null;
+  hide('heartGame');hide('letter');hide('classroom');hide('orderGame');hide('orderDone');hide('videoChallenge');hide('videoResult');hide('movieBonus');hide('thanksModal');
+  document.body.style.overflow='';
+  loadQuestion();
+}
+
+document.getElementById('restartAll').onclick=restartWithoutPassword;
 
 function showThanksModal(){
   document.getElementById('thanksModal').style.display='flex';
@@ -782,7 +1057,7 @@ function finishFromGame2(){
   modal.style.display='flex';
   scrollTop();
 }
-document.getElementById('closeThanks').onclick=()=>{document.getElementById('thanksModal').style.display='none'};
+document.getElementById('closeThanks').onclick=()=>triggerFinalExit();
 document.getElementById('thanksModal').addEventListener('click',e=>{if(e.target.id==='thanksModal')document.getElementById('thanksModal').style.display='none'});
 </script>
 </body>
